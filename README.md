@@ -1,4 +1,4 @@
-# Docker_basic
+# Docker_basic  (&#x1F34E;) (&#x1F4D9;)(&#x1F53B;)
 Docker separate 2 main parts "image" and "container":
 
  1.  image     -> like a template which pre-installing what you want to make an image or you can download image already made by others.
@@ -6,8 +6,8 @@ Docker separate 2 main parts "image" and "container":
  2.  container -> choose image you want to be to start up a container that  you can use to do execute inside pre-installing application certainly you can                     stop container or Start multiple at the same time.
 ## Docker image and container command line:
 > This is the version 20.10
-```
-  image instruction:
+```diff
+ image instruction:
     $ docker pull ubuntu:20.04			# you can go docker hub to find image which already made by others,here use ubuntu:20.04 image
     $ docker image ls -a                        # your all image list 
     $ docker images                             # your all image list
