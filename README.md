@@ -22,7 +22,7 @@ Docker separate 2 main parts "image" and "container":
     $ docker cintainer rm 'container name or ID' 	# remove container,'container name or ID' please type NAMES or IMAGE ID's front four number ,which can be found in your container list
 ```
 ## Docker how to create image:
-* first you need to create txt which write down waiting to be processed command ,example like below
+* Create a file(ex:docker_image_create) and create txt(ex:docker_image_txt) ,which write down waiting to be processed command ,example like below
 ```
 FROM ubuntu:20.04
 RUN apt update
@@ -30,5 +30,11 @@ RUN apt install -y sudo
 CMD ["bash"]
 ```
 > which means :use ubuntu 20.04  ->execute apt update  ->install sudo  ->CMD ["bash"] always add this in end.
-* 123
-> 456 
+
+* Go to docker_image_create file,and RUN commond as below
+```
+docker build -t 'create image name' -f 'docker_image_txt' .
+```
+> 'create image name' ->type you want to create image's name
+> 
+> 'docker_image_txt' -> type you have created txt ,which already write down waiting to be processed command
