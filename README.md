@@ -51,3 +51,8 @@ docker build -t 'create image name' -f 'docker_image_txt' .
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> .
 
 ## Create a container by using own parameter :
+* wait
+```
+wait
+```
+> wait
