@@ -1,4 +1,4 @@
-# Docker_basic  (&#x1F34E;) (&#x1F4D9;)(&#x1F53B;)
+# Docker_basic  (&#x1F4D9;)
 Docker separate 2 main parts "image" and "container":
 
  1.  image     -> like a template which pre-installing what you want to make an image or you can download image already made by others.
@@ -6,7 +6,8 @@ Docker separate 2 main parts "image" and "container":
  2.  container -> choose image you want to be to start up a container that  you can use to do execute inside pre-installing application certainly you can                     stop container or Start multiple at the same time.
 ## Docker image and container command line:
 > This is the version 20.10
-```diff
+
+```css
  image instruction:
     $ docker pull ubuntu:20.04			# you can go docker hub to find image which already made by others,here use ubuntu:20.04 image
     $ docker image ls -a                        # your all image list 
@@ -29,7 +30,7 @@ Docker separate 2 main parts "image" and "container":
 
 ## Create an image:
 * Create a file(ex:docker_image_create) and create txt(ex:docker_image_txt) ,which write down waiting to be processed command ,example like below
-```
+```css
 FROM ubuntu:20.04
 RUN apt update
 RUN apt install -y sudo
@@ -38,7 +39,7 @@ CMD ["bash"]
 > which means :use ubuntu 20.04  ->execute apt update  ->install sudo  ->CMD ["bash"] always add this in end.
 
 * Go to docker_image_create file,and RUN commond as below
-```
+```css
 docker build -t 'create image name' -f 'docker_image_txt' .
 ```
 > 'create image name' ->type you want to create image's name
