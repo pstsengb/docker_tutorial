@@ -22,4 +22,14 @@ Docker separate 2 main parts "image" and "container":
     $ docker cintainer rm 'container name or ID' 	# remove container,'container name or ID' please type NAMES or IMAGE ID's front four number ,which can be found in your container list
 
 ```
+## Docker how to create image:
+* 123
+> 456 
+```
+run
+run
+run
 
+```
+* 123
+> 456 
