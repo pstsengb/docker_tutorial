@@ -20,16 +20,15 @@ Docker separate 2 main parts "image" and "container":
     $ docker exec -it 'container name or ID' bash	# when you start a container,you can access this container
     $ docker stop 'container name or ID'		# stop what you want container 
     $ docker cintainer rm 'container name or ID' 	# remove container,'container name or ID' please type NAMES or IMAGE ID's front four number ,which can be found in your container list
-
 ```
 ## Docker how to create image:
-* 123
-> 456 
+* first you need to create txt which write down waiting to be processed command ,example like below
 ```
-run
-run
-run
-
+FROM ubuntu:20.04
+RUN apt update
+RUN apt install -y sudo
+CMD ["bash"]
 ```
+> which means :use ubuntu 20.04  ->execute apt update  ->install sudo  ->CMD ["bash"] always add this in end.
 * 123
 > 456 
