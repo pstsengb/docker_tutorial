@@ -1,5 +1,4 @@
-<font color=#008000>我是深綠色</font>
-# Docker_basic  (&#x1F4D9;)
+# Docker_basic   [![](https://img.shields.io/badge/github-blue?style=for-the-badge)](https://github.com/hamzamohdzubair/redant)
 Docker separate 2 main parts "image" and "container":
 
  1.  image     -> like a template which pre-installing what you want to make an image or you can download image already made by others.
@@ -58,4 +57,4 @@ docker build -t 'create image name' -f 'docker_image_txt' .
 wait
 ```
 > wait
-
+(&#x1F4D9;)
