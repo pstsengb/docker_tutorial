@@ -5,7 +5,7 @@ Docker separate 2 main parts "image" and "container":
   
  2.  container -> choose image you want to be to start up a container that  you can use to do execute inside pre-installing application certainly you can                     stop container or Start multiple at the same time.
 ## Docker image and container command line:
-> This is the version 20.10
+* Popular used commands
 
 ```css
  image instruction:
@@ -13,6 +13,7 @@ Docker separate 2 main parts "image" and "container":
     $ docker image ls -a                        # your all image list 
     $ docker images                             # your all image list
     $ docker image rm 'image name or ID'        # remove image,'image name or ID' please type NAMES or IMAGE ID's front four number ,which can be found in your image list
+    $ docker image tag 'image ID' 'new name'    # rename your image
     $ docker run -it ubuntu:20.04 bash		# use ubuntu:20.04 image to create a container
     
   container instruction:
@@ -20,15 +21,12 @@ Docker separate 2 main parts "image" and "container":
     $ docker start 'container name or ID'               # start a container. 'container name or ID' please type NAMES or CONTAINER ID's front four number ,which can be found in your container list
     $ docker exec -it 'container name or ID' bash	# when you start a container,you can access this container
     $ docker stop 'container name or ID'		# stop what you want container 
-    $ docker cintainer rm 'container name or ID' 	# remove container,'container name or ID' please type NAMES or IMAGE ID's front four number ,which can be found in your container list
+    $ docker container rm 'container name or ID' 	# remove container,'container name or ID' please type NAMES or IMAGE ID's front four number ,which can be found in your container list
 ```
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> .
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> . 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> .
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> .
+> This is the version 20.10
 
 ## Create an image:
+### 1.create image step by step 
 * Create a file(ex:docker_image_create) and create txt(ex:docker_image_txt) ,which write down waiting to be processed command ,example like below
 ```css
 FROM ubuntu:20.04
@@ -45,11 +43,12 @@ $ docker build -t 'create image name' -f 'docker_image_txt' .
 > 'create image name' ->type you want to create image's name
 > 
 > 'docker_image_txt' -> type you have created txt ,which already write down waiting to be processed command
-
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> .
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> . 
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> .
->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> .
+### 2.create image using already exists container
+* When you already have a container and you want to use current container to create an image,you can use below command
+```css
+$ docker commit 'your container name'
+```
+> 'your container name' ->type your already have container name
 
 ## Create a container by using own parameter :
 * First create a txt.bash which content like below ,and go to that file,execute bash(./ "your txt name".bash)
