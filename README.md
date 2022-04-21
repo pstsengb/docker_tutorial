@@ -1,4 +1,4 @@
-# Docker_basic   [![](https://img.shields.io/badge/github-blue?style=for-the-badge)](https://github.com/hamzamohdzubair/redant)
+# Docker_basic   <img style="vertical-align:middle;" alt="logo" src="https://www.docker.com/wp-content/uploads/2022/03/horizontal-logo-monochromatic-white.png" height="25px">
 Docker separate 2 main parts "image" and "container":
 
  1.  image     -> like a template which pre-installing what you want to make an image or you can download image already made by others.
@@ -40,7 +40,7 @@ CMD ["bash"]
 
 * Go to docker_image_create file,and RUN commond as below
 ```css
-docker build -t 'create image name' -f 'docker_image_txt' .
+$ docker build -t 'create image name' -f 'docker_image_txt' .
 ```
 > 'create image name' ->type you want to create image's name
 > 
@@ -52,9 +52,27 @@ docker build -t 'create image name' -f 'docker_image_txt' .
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> .
 
 ## Create a container by using own parameter :
-* wait
+* First create a txt.bash which content like below ,and go to that file,execute bash(./ "your txt name".bash)
+```css
+1  #!/bin/bash
+2  xhost +local:docker
+3  docker run -it \
+4     --privileged \
+5     --network=host \
+6     --env="DISPLAY" \
+7     --env="QT_X11_NO_MITSHM=1" \
+8     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+9     --name="example_container_name" \
+10     ubuntu_and_ros:latest
 ```
-wait
-```
-> wait
-(&#x1F4D9;)
+> code explain
+> 
+> Number 2,6,7,8 :using for authorization of access X server 
+> 
+> Number 4 :using for authorization of host device ,5 using for authorization of host port
+>
+> Number 9 :type your want to create container name
+> 
+> Number 10 :choose your image template
+
+
