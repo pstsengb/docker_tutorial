@@ -1,4 +1,5 @@
 # Docker_basic   <img style="vertical-align:middle;" alt="logo" src="https://www.docker.com/wp-content/uploads/2022/03/horizontal-logo-monochromatic-white.png" height="25px">
+### Docker Introduce:
 Docker separate 2 main parts "image" and "container":
 
  1.  image     -> like a template which pre-installing what you want to make an image or you can download image already made by others.
@@ -23,7 +24,7 @@ Docker separate 2 main parts "image" and "container":
     $ docker stop 'container name or ID'		# stop what you want container 
     $ docker container rm 'container name or ID' 	# remove container,'container name or ID' please type NAMES or IMAGE ID's front four number ,which can be found in your container list
 ```
-> This is the version 20.10
+> Docker's version 20.10
 
 ## Create an image:
 ### 1.create image step by step 
@@ -64,14 +65,53 @@ $ docker commit 'your container name'
 9     --name="example_container_name" \
 10     ubuntu_and_ros:latest
 ```
-> code explain
+> Code explain:
 > 
-> Number 2,6,7,8 :using for authorization of access X server 
+> Row 2,6,7,8 :using for authorization of access X server 
 > 
-> Number 4 :using for authorization of host device ,5 using for authorization of host port
+> Row 4 :using for authorization of host device ,5 using for authorization of host port
 >
-> Number 9 :type your want to create container name
+> Row 9 :type your want to create container name
 > 
-> Number 10 :choose your image template
+> Row 10 :choose your image template
 
+## Auto create a container and execute command  :
+* First create a txt which content like below 
+```css
+1 version: "3"
+2 services:
+3   example_container:
+4    image: example_ros_image:latest
+5    command: bash -c "cd /home && source devel/setup.bash"
+6    network_mode: host
+7    privileged: true
+8    environment:
+9      ROS_MASTER_URI: http://localhost:11311
+10    container_name: example_container_name
+11    volumes:
+12      - "/home/test/Desktop/robot_2d_simulation:/ws_ros"
+```
+> Code explain:
+> 
+> Row 3 :enter a name
+> 
+> Row 4 :choose your image template
+>
+> Row 5 :enter you want to execute command
+> 
+> Row 6 :setting network authorization 
+> 
+> Row 7 :setting host device authorization 
+> 
+> Row 8,9 :setting environment
+> 
+> Row 10 :enter your want to create container name
+> 
+> Row 11,12 :host data mount(/home/pstsengb/Desktop/robot_2d_simulation:) to container(/ws_ros)
 
+* Second go to that file,run commond as below
+ ```css
+$ docker-compose -f 'docker compose txt' up
+```
+> after docker compose a container,you can start to use 
+> 
