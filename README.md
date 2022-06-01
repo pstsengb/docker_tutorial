@@ -63,6 +63,7 @@ $ docker commit 'your container name'
 6     --env="DISPLAY" \
 7     --env="QT_X11_NO_MITSHM=1" \
 8     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+      #--volume="host pwd:/client location" \
 9     --name="example_container_name" \
 10     ubuntu_and_ros:latest
 ```
