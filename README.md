@@ -55,17 +55,17 @@ $ docker commit 'your container name'
 ## Create a container by using own parameter :
 * First create a txt.bash which content like below ,and go to that file,execute bash(./ "your txt name".bash)
 ```css
-1  #!/bin/bash
-2  xhost +local:docker
-3  docker run -it \
-4     --privileged \
-5     --network=host \
-6     --env="DISPLAY" \
-7     --env="QT_X11_NO_MITSHM=1" \
-8     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+  #!/bin/bash
+  xhost +local:docker
+  docker run -it \
+     --privileged \
+     --network=host \
+     --env="DISPLAY" \
+     --env="QT_X11_NO_MITSHM=1" \
+     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
       #--volume="host pwd:/client location" \
-9     --name="example_container_name" \
-10     ubuntu_and_ros:latest
+     --name="example_container_name" \
+     ubuntu_and_ros:latest
 ```
 > Code explain:
 > 
@@ -78,20 +78,20 @@ $ docker commit 'your container name'
 > Row 10 :choose your image template
 
 ## Auto create a container and execute command  :
-* First create a txt which content like below 
+* First create a yaml which content like below 
 ```css
-1 version: "3"
-2 services:
-3   example_container:
-4    image: example_ros_image:latest
-5    command: bash -c "cd /home && source devel/setup.bash"
-6    network_mode: host
-7    privileged: true
-8    environment:
-9      ROS_MASTER_URI: http://localhost:11311
-10    container_name: example_container_name
-11    volumes:
-12      - "/home/test/Desktop/robot_2d_simulation:/ws_ros"
+ version: "3"
+ services:
+   example_container:
+    image: example_ros_image:latest
+    command: bash -c "cd /home && source devel/setup.bash"
+    network_mode: host
+    privileged: true
+    environment:
+      ROS_MASTER_URI: http://localhost:11311
+    container_name: example_container_name
+    volumes:
+      - "/home/test/Desktop/robot_2d_simulation:/ws_ros"
 ```
 > Code explain:
 > 
@@ -113,7 +113,7 @@ $ docker commit 'your container name'
 
 * Second go to that file,run commond as below
  ```css
-$ docker-compose -f 'docker compose txt' up
+$ docker-compose -f 'docker compose .yaml' up
 ```
 > after docker compose a container,you can start to use 
 > 
