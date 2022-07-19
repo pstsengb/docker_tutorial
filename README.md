@@ -120,5 +120,5 @@ $ docker-compose -f 'docker compose .yaml' up
  ```css
 $ docker-compose -f 'docker compose .yaml' up -d
 ```
-> after docker compose a container and terminal will exit,and container will keep execute at backgound,you can start to use 
+> different part with above is after docker compose a container and terminal will exit,and container will keep execute at backgound,you can start to use 
 > 
