@@ -122,3 +122,9 @@ $ docker-compose -f 'docker compose .yaml' up -d
 ```
 > different part with above is after docker compose a container and terminal will exit,and container will keep execute at backgound,you can start to use 
 > 
+
+ ```css
+$ docker-compose -f 'docker compose .yaml' down
+```
+> if you want to turn off container ,type as above 
+> 
