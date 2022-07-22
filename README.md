@@ -126,5 +126,5 @@ $ docker-compose -f 'docker compose .yaml' up -d
  ```css
 $ docker-compose -f 'docker compose .yaml' down
 ```
-> if you want to turn off container ,type as above 
+> if you want to exit container ,type as above 
 > 
