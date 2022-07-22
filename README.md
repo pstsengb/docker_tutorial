@@ -24,7 +24,7 @@ Docker separate 2 main parts "image" and "container":
     $ docker stop 'container name or ID'		# stop what you want container 
     $ docker container rm 'container name or ID' 	# remove container,'container name or ID' please type NAMES or IMAGE ID's front four number ,which can be found in your container list
     $ docker cp 'PWD/file name' 'container name:/PWD'   # copy file('PWD/file name' mean host file loaction) to your container loaction('container name:/PWD' you want to put at container loaction)
-    $ docker cp 'container name:/PWD' 'PWD/file name' #copy container file to host(example: docker cp ABC_container:/tmp/ABC.bag ./)
+    $ docker cp 'container name:/PWD' 'PWD/file name'   #copy container file to host(example: docker cp ABC_container:/tmp/ABC.bag ./)
 ```
 > Docker's version 20.10
 
